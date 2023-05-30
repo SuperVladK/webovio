@@ -14,17 +14,65 @@ body {
     margin-right: auto;
     padding-left: 25px;
     padding-right: 25px;
-    display: flex;
+    position: relative;
+    /*display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;*/
  }
 
  .header {
     width: 100%;
     top: 24px;
     position: absolute;
-    display: flex;
-    justify-content: space-between;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    label {
+        display: block;
+        height: 40px;
+        width: 40px;
+        background: #fff;
+        border-radius: 50%;
+        position: relative;
+    }
+    #switcher {
+        display: none;
+    }
+    .toggle {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: black;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: calc(50% - 9px);
+    
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: black;
+            position: absolute;
+        }
+        &:after {
+            top: -5.6px;
+        }
+        &:before {
+            top: 5.6px;
+        }
+    }
+    .menu {
+        max-height: 0;
+        width: 280px;
+        background: #fff;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
 
 // Hero
